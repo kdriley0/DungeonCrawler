@@ -11,13 +11,14 @@ import java.util.concurrent.Executors;
 
 /**
  *
- * @author kevin
+ * @author kevin riley 
+ * to function as a a driver for my 331 mini project
+ * 
+ * just doing it with two threads 
+ * one for the server one for the client
  */
 public class MiniProject331 {
-   static Dungeon d;
-    /**
-     * @param args the command line arguments
-     */
+  
     public static void main(String[] args) {
         int port=50001;
       //  d.startGame();

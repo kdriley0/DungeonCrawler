@@ -8,6 +8,7 @@ package Game;
 /**
  *
  * @author kevin
+ * my room class 
  */
 public class Room {
     

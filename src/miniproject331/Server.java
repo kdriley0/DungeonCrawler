@@ -36,7 +36,8 @@ public class Server implements Runnable{
            System.out.println(data);
            d=new Dungeon(new Hero(data));
            d.startGame();
-           byte[] b2= (data+ "").getBytes();
+           
+           byte[] b2= d.toString().getBytes();
            
            
            DatagramPacket dp1 = new DatagramPacket(b2, b2.length,localHost,dp.getPort());

@@ -33,7 +33,7 @@ public class Dungeon {
       // Hero p1= new Hero(name);
     System.out.println(" hello brave adventurer "+player.name);
        
-       while(position!= WIDTH){
+       while(position < WIDTH){
             System.out.println("ypur position is "+position);
              System.out.println("you can go forward type f or swing your sword type s");
         char in = scan.next().charAt(0);
@@ -52,10 +52,10 @@ public class Dungeon {
 
            
        }
-        System.out.println("the hero emerges victorius");
+        System.out.println();
        
     }
-       public void swingSword(int position){
+       public void swingSword(int pos){
            if(position==WIDTH-1){
                System.out.println("The mighty hero "+ this.player.name+ " swings his sword");
                System.out.println("Decapitating "+mon.toString() +"!");
@@ -100,6 +100,11 @@ public class Dungeon {
       }
         
         return position+1;
+    }
+    public String toString(){
+        String out="";
+        out+= "The hero emerges victorius";
+        return out;
     }
    
 }
