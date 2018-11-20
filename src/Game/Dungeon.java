@@ -15,24 +15,58 @@ import java.util.Scanner;
 public class Dungeon {
     
     static Scanner scan= new Scanner(System.in);
-    static Hero player = new Hero();
+     Hero player ;
     static Monster mon =new Monster();
     static   int position;
     public static final int WIDTH = 6;
     public int depth = 1;
     static int[] dung = new int[WIDTH] ;
  //   int[][] dungeon= new int[width][depth];
+   public Dungeon(Hero player){
+       this.player=player;
+    }
+   
     public void startGame(){
        position=0;
-       System.out.println(" what is the heroes name?");
-       String name = scan.nextLine();
-       Hero p1= new Hero(name);
-        System.out.println(" hello brave adventurer "+p1.name);
+      // System.out.println(" what is the heroes name?");
+    //  String name = scan.nextLine();
+      // Hero p1= new Hero(name);
+    System.out.println(" hello brave adventurer "+player.name);
        
        while(position!= WIDTH){
+            System.out.println("ypur position is "+position);
+             System.out.println("you can go forward type f or swing your sword type s");
+        char in = scan.next().charAt(0);
+           switch (in){
+           case 'f':
            moveForward(position);
+           break;
+           case 's':
+          this.swingSword(position);
+           break;
+           default:
+              System.out.println("please try again \nyou can go forward type f or swing your sword type s");
+              
+      
        }
+
+           
+       }
+        System.out.println("the hero emerges victorius");
+       
     }
+       public void swingSword(int position){
+           if(position==WIDTH-1){
+               System.out.println("The mighty hero "+ this.player.name+ " swings his sword");
+               System.out.println("Decapitating "+mon.toString() +"!");
+               position++;
+           }else {
+               System.out.println("The mighty hero "+ this.player.name+ " swings his sword");
+               System.out.println("at nothing has he gone mad?");
+           }
+           
+       }
+    
     public static int moveForward(int currP){
       switch(currP){
           case 0:
@@ -57,8 +91,8 @@ public class Dungeon {
               break;
           case 5:
               System.out.println("The Hero runs into " + mon.toString());
-             System.out.println(" and slays the scary monster");
-             position++;
+             //System.out.println(" and slays the scary monster");
+             
               break;
           default:
               System.out.println("the hero emerges victorius");

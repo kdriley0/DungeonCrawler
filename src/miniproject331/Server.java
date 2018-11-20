@@ -21,7 +21,7 @@ public class Server implements Runnable{
       Server(int p){
           port=p;
       }
-    static  Dungeon d = new Dungeon();
+    static  Dungeon d ;
       private final int PORT=7777;
       InetAddress localHost;
     public void run(){
@@ -32,10 +32,10 @@ public class Server implements Runnable{
            byte[] b1 = new byte[1024];
            DatagramPacket dp = new DatagramPacket(b1,b1.length);
            sock.receive(dp);
-           d.startGame();
            String data = new String(dp.getData());
            System.out.println(data);
-          
+           d=new Dungeon(new Hero(data));
+           d.startGame();
            byte[] b2= (data+ "").getBytes();
            
            

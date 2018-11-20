@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  * @author kevin
  */
 public class MiniProject331 {
-   static Dungeon d = new Dungeon();
+   static Dungeon d;
     /**
      * @param args the command line arguments
      */

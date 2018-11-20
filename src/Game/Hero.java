@@ -12,17 +12,14 @@ package Game;
  */
 public class Hero {
     
-    String name;
-    int health;
-    double attack;
-    int pos;
-    Hero(String n){
+   public String name;
+    public int health;
+   public double attack;
+    public int pos;
+   public Hero(String n){
         name =n;
     }
-    Hero()
-    {
-        
-    }
+    
     public String toString(){
         String out= name;
         return out;

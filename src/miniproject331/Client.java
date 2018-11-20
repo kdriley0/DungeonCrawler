@@ -9,6 +9,7 @@ import Game.*;// i am lazy
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.Scanner;
 
 /**
  *
@@ -16,10 +17,12 @@ import java.net.InetAddress;
  */
 public class Client  implements Runnable{
     
-    
-    Dungeon d= new Dungeon();
+     static Scanner scan= new Scanner(System.in);
+     Dungeon d;
      private final int PORT=7777;
      int port;
+     String name;
+     
      Client(int port){
          this.port=port;
      }
@@ -27,8 +30,9 @@ public class Client  implements Runnable{
        try{
            DatagramSocket ds= new DatagramSocket();
            int i=8;
-           
-           byte[] b= (i+"").getBytes();
+        System.out.println(" what is the heroes name?");
+         name = scan.nextLine();
+           byte[] b= name.getBytes();
            
            InetAddress ia = InetAddress.getLocalHost();
            DatagramPacket dp= new DatagramPacket(b,b.length,ia,port);
