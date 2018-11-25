@@ -9,6 +9,12 @@ package Game;
  *
  * @author kevinn riley on 11/16/18
  * to house my player object 
+ * 
+ * I initially had a much bigger plan for the game I may still implement it 
+ * but for now all this does is hold the player name
+ * 
+ * with a constructor for the player name
+ * and have a toString method returning the player name 
  */
 public class Hero {
     

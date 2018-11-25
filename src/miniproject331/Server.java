@@ -5,39 +5,49 @@
  */
 package miniproject331;
 
-import Game.*;
+import Game.Dungeon;
+import Game.Hero;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 /**
  *
- * @author kevin
+ * @author kevin on 11/20/18 to act as a server to my project
+ *
+ * has a constructor that takes a port number
+ * 
+ * it also sends the victory message back to the client
  */
 public class Server implements Runnable{
-      DatagramSocket sock;
-      String hostName;
+    
+      DatagramSocket sock;//declaring variables
       int port;
+      static  Dungeon d ;
+      private final int PORT=7777;
+      InetAddress localHost;
+      
+      
       Server(int p){
           port=p;
       }
-    static  Dungeon d ;
-      private final int PORT=7777;
-      InetAddress localHost;
+      
+    
     public void run(){
        try{
+           
            localHost=InetAddress.getLocalHost();
            sock=new DatagramSocket(port);
            
-           byte[] b1 = new byte[1024];
-           DatagramPacket dp = new DatagramPacket(b1,b1.length);
-           sock.receive(dp);
+           byte[] b1 = new byte[1024];//needs to first be initialzed to a size bigger than the packet it is going to accept
+           DatagramPacket dp = new DatagramPacket(b1,b1.length);// declaring and initialzing a datagram packet  
+           sock.receive(dp);//recieving a datagram packet from the socket declared
            String data = new String(dp.getData());
-           System.out.println(data);
-           d=new Dungeon(new Hero(data));
+           //System.out.println(data);
+           d=new Dungeon(new Hero(data));//creating a new dungeon with the hero name that I received from the client
            d.startGame();
            
-           byte[] b2= d.toString().getBytes();
+           byte[] b2= d.toString().getBytes();//sending back the victory message 
            
            
            DatagramPacket dp1 = new DatagramPacket(b2, b2.length,localHost,dp.getPort());

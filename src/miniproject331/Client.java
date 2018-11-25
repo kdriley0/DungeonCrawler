@@ -5,7 +5,7 @@
  */
 package miniproject331;
 
-import Game.*;// i am lazy 
+import Game.Dungeon; 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -13,13 +13,16 @@ import java.util.Scanner;
 
 /**
  *
- * @author kevin
+ * @author kevin on 11/20/18 to run a dungeon crawerer using UDP sockets 
+ * 
+ * this is my client class which asks for the name of the hero and sends it to the server
+ * 
  */
 public class Client  implements Runnable{
     
      static Scanner scan= new Scanner(System.in);
      Dungeon d;
-     private final int PORT=7777;
+     private final int PORT=7777;//I had initally planed on using this port 
      int port;
      String name;
      
@@ -43,7 +46,7 @@ public class Client  implements Runnable{
            
            String str = new String(dp1.getData());
            
-           System.out.println("what we got back was "+ str);
+           System.out.println( str);
            
        }catch(Exception e){
            e.printStackTrace();

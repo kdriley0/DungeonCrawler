@@ -19,19 +19,24 @@ public class Dungeon {
     static Monster mon =new Monster();
     static   int position;
     public static final int WIDTH = 6;
-    public int depth = 1;
+    public int depth = 1;// I thought about doing a 2d array of rooms but that would take too long
     static int[] dung = new int[WIDTH] ;
  //   int[][] dungeon= new int[width][depth];
    public Dungeon(Hero player){
        this.player=player;
     }
-   
+   /**
+    * my start game method 
+    * essentially runs the game 
+    * starts the hero at the beginning of the the dungeon and 
+    * ends when the hero makes it to the end
+    */
     public void startGame(){
        position=0;
       // System.out.println(" what is the heroes name?");
     //  String name = scan.nextLine();
       // Hero p1= new Hero(name);
-    System.out.println(" hello brave adventurer "+player.name);
+    System.out.println(" Hello brave adventurer "+player.name);
        
        while(position < WIDTH){
             System.out.println("ypur position is "+position);
@@ -55,6 +60,13 @@ public class Dungeon {
         System.out.println();
        
     }
+    /**
+     * my swing sword method it allows the user to swing a sword 
+     * could be later updated with damage / health of monsters 
+     * but seeing as how this is a mini project I wanted to keep it simple 
+     * 
+     * @param pos 
+     */
        public void swingSword(int pos){
            if(position==WIDTH-1){
                System.out.println("The mighty hero "+ this.player.name+ " swings his sword");
@@ -66,7 +78,12 @@ public class Dungeon {
            }
            
        }
-    
+    /**
+     * my move forward method 
+     * essentially prints off what happens as the hero makes their way through the dungeon
+     * @param currP
+     * @return not necessary but if its not broke don't fix it haha
+     */
     public static int moveForward(int currP){
       switch(currP){
           case 0:
@@ -95,12 +112,15 @@ public class Dungeon {
              
               break;
           default:
-              System.out.println("the hero emerges victorius");
+              System.out.println("an error has occurred");
               position++;
       }
         
         return position+1;
     }
+    /**
+     * my toString method returns the victory statement
+    */
     public String toString(){
         String out="";
         out+= "The hero emerges victorius";

@@ -9,6 +9,12 @@ package Game;
  *
  * @author kevin on 11/16/18
  * to hold my monster class
+ * 
+ * all it does is hold the monster name and 
+ * a to string class to return it 
+ * 
+ * same as the hero class 
+ * I had much bigger ideas which I may still implement
  */
 public class Monster {
     String name;
