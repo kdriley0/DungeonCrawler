@@ -20,11 +20,11 @@ import java.util.Scanner;
  */
 public class Client  implements Runnable{
     
-     static Scanner scan= new Scanner(System.in);
-     Dungeon d;
-     private final int PORT=7777;//I had initally planed on using this port 
-     int port;
-     String name;
+    private static Scanner scan= new Scanner(System.in);
+    private Dungeon d;
+    private final int PORT=7777;//I had initally planed on using this port 
+    private  int port;
+    String name;
      
      Client(int port){
          this.port=port;
@@ -47,7 +47,7 @@ public class Client  implements Runnable{
            String str = new String(dp1.getData());
            
            System.out.println( str);
-           
+           ds.close();
        }catch(Exception e){
            e.printStackTrace();
        }

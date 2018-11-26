@@ -14,13 +14,13 @@ import java.util.Scanner;
  */
 public class Dungeon {
     
-    static Scanner scan= new Scanner(System.in);
-     Hero player ;
-    static Monster mon =new Monster();
-    static   int position;
-    public static final int WIDTH = 6;
-    public int depth = 1;// I thought about doing a 2d array of rooms but that would take too long
-    static int[] dung = new int[WIDTH] ;
+    private static Scanner scan= new Scanner(System.in);
+    private Hero player ;
+    private static Monster mon =new Monster();
+    private static   int position;
+    private static final int WIDTH = 6;
+    private int depth = 1;// I thought about doing a 2d array of rooms but that would take too long
+    private static int[] dung = new int[WIDTH] ;
  //   int[][] dungeon= new int[width][depth];
    public Dungeon(Hero player){
        this.player=player;
@@ -39,7 +39,7 @@ public class Dungeon {
     System.out.println(" Hello brave adventurer "+player.name);
        
        while(position < WIDTH){
-            System.out.println("ypur position is "+position);
+          //  System.out.println("ypur position is "+position);
              System.out.println("you can go forward type f or swing your sword type s");
         char in = scan.next().charAt(0);
            switch (in){

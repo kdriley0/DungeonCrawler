@@ -17,9 +17,9 @@ package Game;
  * I had much bigger ideas which I may still implement
  */
 public class Monster {
-    String name;
-    int hp;
-    double damage;
+    private String name;
+    private int hp;
+    private double damage;
     Monster(int hp){
         
     }

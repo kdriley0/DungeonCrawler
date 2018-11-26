@@ -21,11 +21,11 @@ import java.net.InetAddress;
  */
 public class Server implements Runnable{
     
-      DatagramSocket sock;//declaring variables
-      int port;
-      static  Dungeon d ;
+      private DatagramSocket sock;//declaring variables
+      private int port;
+      private static  Dungeon d ;
       private final int PORT=7777;
-      InetAddress localHost;
+      private InetAddress localHost;
       
       
       Server(int p){
@@ -52,7 +52,7 @@ public class Server implements Runnable{
            
            DatagramPacket dp1 = new DatagramPacket(b2, b2.length,localHost,dp.getPort());
            sock.send(dp1);
-           
+           sock.close();
        }catch(Exception e){
            e.printStackTrace();
        }
