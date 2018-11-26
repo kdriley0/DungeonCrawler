@@ -1,0 +1,66 @@
+#  MiniProject331
+* my driver for this project
+* main()  // my main method that starts the threads 
+
+# Client implements Runnable
+* constructor take a int and makes it into the port that it connects on 
+* run() runs the thread // which asks for the hero's name and passes it to the server
+
+# Server implements Runnable
+* constructor take a int and makes it into the port that it connects on 
+* run() runs the thread // which starts the game and sends the victory message back to the client 
+
+# Dungeon 
+* my main game object // holds the Hero and the Monster class 
+* constuctor takes a Hero object and makes it the hero of the game
+
+ * my start game method 
+    * essentially runs the game 
+    * starts the hero at the beginning of the the dungeon and 
+    * ends when the hero makes it to the end
+    
+   * swingSword(int pos)
+     * takes the current position of the Hero 
+     * my swing sword method it allows the user to swing a sword 
+     * could be later updated with damage / health of monsters 
+     * but seeing as how this is a mini project I wanted to keep it simple 
+     
+   *  moveForward(int pos)
+     * essentially prints off what happens as the hero makes their way through the dungeon
+     * takes the current position of the Hero 
+     
+   * toString() 
+    *  my toString method returns the victory statement
+    
+  # Hero
+  * to house my player object 
+ * I initially had a much bigger plan for the game I may still implement it 
+ * but for now all this does is hold the player name
+ 
+ * constructor for the player name 
+ 
+ * toString() // returns the name of the hero
+ 
+# Monster 
+ * to hold my monster class
+ * 
+ * all it does is hold the monster name and 
+ * a to string class to return it 
+ * 
+ * same as the hero class 
+ * I had much bigger ideas which I may still implement
+ 
+ * two constuctors a default which names the monster
+ * and one where you can pick the monsters name with a string
+ 
+# Room 
+ * I had initally thought I would have an array of rooms 
+ * 
+ * where each room had a monster or treasure or something 
+ * 
+ * and I could randomize the rooms 
+ * 
+ * but for now it is an empty class
+ 
+ 
+  
